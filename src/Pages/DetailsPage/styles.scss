@@ -27,3 +27,11 @@
 
     }
 }
+
+@media (max-width: 768px) {
+    .movie-detail {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
