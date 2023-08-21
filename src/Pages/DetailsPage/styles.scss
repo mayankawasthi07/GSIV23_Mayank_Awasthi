@@ -1,0 +1,29 @@
+.appbar {
+    background-color: white !important;
+    color: #9b9b9b !important;
+}
+
+.movie-detail {
+    display: flex;
+
+    .movie-image {
+        width: 200px;
+        height: 350px;
+    }
+
+    .movie-text {
+        margin-left: 10px;
+        color: #4a4a4a;
+        font-size: 24px;
+
+        .movie-title {
+            font-weight: 600;
+            font-size: 32px;
+
+            .movie-rating {
+                font-weight: 400;
+            }
+        }
+
+    }
+}
