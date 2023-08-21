@@ -37,7 +37,7 @@ const DetailsPage = () => {
             .then(function (response) {
                 setMovie(response.data);
                 const date = response.data.release_date;
-                const releaseYear = date.substring(0,4);
+                const releaseYear = date.substring(0, 4);
                 setYear(releaseYear);
             })
             .catch(function (error) {

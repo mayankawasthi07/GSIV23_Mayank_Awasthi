@@ -9,13 +9,13 @@ import {
 function App() {
   return (
     <BrowserRouter>
-    <div className="App">
-      <Routes>
-        <Route exact path="/" element={<ListPage/>} />
-        <Route path="/:id" element={<DetailsPage/>} /> 
-      </Routes>
-    </div>
-  </BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route exact path="/" element={<ListPage />} />
+          <Route path="/:id" element={<DetailsPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

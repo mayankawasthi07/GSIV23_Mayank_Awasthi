@@ -16,24 +16,25 @@ const ListPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if(searched.length === 0)
-    {const options = {
-      method: 'GET',
-      url: `${appConstants.baseURL}/upcoming?language=en-US&page=${page}`,
-      headers: {
-        accept: 'application/json',
-        Authorization: `Bearer ${appConstants.authorizationHeader}`
-      }
-    };
+    if (searched.length === 0) {
+      const options = {
+        method: 'GET',
+        url: `${appConstants.baseURL}/upcoming?language=en-US&page=${page}`,
+        headers: {
+          accept: 'application/json',
+          Authorization: `Bearer ${appConstants.authorizationHeader}`
+        }
+      };
 
-    axios
-      .request(options)
-      .then(function (response) {
-        setMovieData(response.data.results);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });}
+      axios
+        .request(options)
+        .then(function (response) {
+          setMovieData(response.data.results);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
   }, [page, searched])
 
   const handlePageChange = (e, p) => {
@@ -72,11 +73,11 @@ const ListPage = () => {
   };
 
   return <>
-  <SearchBar
-          value={searched}
-          onChange={(searchVal) => requestSearch(searchVal)}
-          onCancelSearch={() => cancelSearch()}
-        />
+    <SearchBar
+      value={searched}
+      onChange={(searchVal) => requestSearch(searchVal)}
+      onCancelSearch={() => cancelSearch()}
+    />
     <GridList cellHeight={"auto"} className='grid-list'>
       {moviesData.map((item, index) => (
         <MovieCard onClick={() => {
@@ -86,14 +87,14 @@ const ListPage = () => {
       ))}
     </GridList>
     {searched.length === 0 ? (
-    <Pagination
-      count={10}
-      size="large"
-      page={page}
-      variant="outlined"
-      shape="rounded"
-      onChange={handlePageChange}
-    />) : ''}
+      <Pagination
+        count={10}
+        size="large"
+        page={page}
+        variant="outlined"
+        shape="rounded"
+        onChange={handlePageChange}
+      />) : ''}
   </>
 }
 
