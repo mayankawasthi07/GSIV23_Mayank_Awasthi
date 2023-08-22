@@ -8,7 +8,7 @@ import {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/GSIV23_Mayank_Awasthi">
       <div className="App">
         <Routes>
           <Route exact path="/" element={<ListPage />} />
